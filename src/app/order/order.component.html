@@ -1,0 +1,10 @@
+<div class="wrapper animation">
+  <h2>Total orders: {{lengthOrders}}</h2>
+  <div class="row">
+    <div class="col m4 orders" *ngFor="let order of orders">
+      <div style="border: 1px solid white" class="z-depth-3" (click)="orderDetail(order)">
+        <h3>#{{order.orderCode}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

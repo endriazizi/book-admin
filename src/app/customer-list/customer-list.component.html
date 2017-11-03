@@ -1,0 +1,32 @@
+<div class="wrapper animation">
+ 
+  <div class="row">
+    <div class="col m3" *ngFor="let customer of customers">
+      <div class="card blue-grey lighten-5 sticky-action">
+        <div class="activator">
+          <i class="material-icons right" style="cursor: pointer">more_vert</i>
+        </div>
+        <div class="card-content">
+          <span class="card-title"> <a href=""> {{customer.name}} {{customer.lastName}} </a> </span>
+          <i class="tiny material-icons left">email</i>
+          <p> {{customer.email}}</p>
+          <i class="tiny material-icons left">phone</i>
+          <p> {{customer.phone}}</p>
+          <i class="tiny material-icons left">wc</i>
+          <p> {{customer.gender}}</p>
+        </div>
+        <div class="card-action">
+          <button class="waves-effect waves-light btn indigo" (click)="deleteCustomer(customer._id)"><i class="material-icons">delete</i></button>
+          <button class="waves-effect waves-light btn light-blue darken-1" (click)="editCustomer(customer)"><i class="material-icons">edit</i></button>
+        </div>
+
+        <div class="card-reveal" id="paragraph">
+          <span class="card-title grey-text text-darken-4"> {{customer.name}} {{customer.lastName}}<i class="material-icons right">close</i></span>
+          <p>{{customer.street}} / {{customer.city}} / {{customer.zip}}</p>
+          <p>{{customer.country}} / {{customer.state}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

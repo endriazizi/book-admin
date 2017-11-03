@@ -1,0 +1,34 @@
+<div class="cont">
+    <ul id="slide-out" class="side-nav fixed">
+        <li class="show">
+            <div class="user-view">
+                <div class="background">
+                    <img src="assets/img.gif">
+                </div>
+                <div class="section"></div>
+                <span class="white-text name">{{admin.name}}</span>
+                <span class="white-text email">{{admin.email}}</span>
+            </div>
+        </li>
+        <li><a href="" routerLink="/dashboard"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="*" routerLink="/dashboard/genre"><i class="material-icons">books</i>Genre</a></li>
+        <li><a href="*" routerLink="/dashboard/book"><i class="material-icons">library_books</i>Books</a></li>
+        <li><a href="*" routerLink="/dashboard/customerList"> <i class="material-icons">wc</i>Customers</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Menu</a></li>
+        <li><a href="*" routerLink="/dashboard/orders"><i class="material-icons">shopping_cart</i>Orders</a></li>
+        <li><a href="*" routerLink="/dashboard/addBook"><i class="material-icons">book</i>Add book</a></li>
+        <li><a href="*" routerLink="/dashboard/customer"> <i class="material-icons">directions_run</i>Add customer</a></li>
+        <li><a href="*" routerLink="/dashboard/home"> <i class="material-icons">comment</i>Reviews</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="" (click)="logout(admin)"> <i class="material-icons">cloud_off</i>Logout</a></li>
+
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,78 @@
+<div class="wrapper animation">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s5">
+          <label>Title</label>
+        <div class="input-field">
+          <i class="material-icons prefix">book</i>
+          <input id="title" type="text" class="validate" [(ngModel)]="book.title" name="book.title">
+        </div>
+
+        <label>Author</label>
+        <div class="input-field">
+          <i class="material-icons prefix">person_outline</i>
+          <input id="author" type="text" class="validate" [(ngModel)]="book.author" name="book.author">
+        </div>
+
+        <label>Description</label>
+        <div class="input-field">
+          <i class="material-icons prefix">description</i>
+          <textarea id="description" class="materialize-textarea" [(ngModel)]="book.description" name="book.description"></textarea>
+        </div>
+
+        <label>Pages</label>
+        <div class="input-field">
+          <i class="material-icons prefix">dehaze</i>
+          <input id="pages" type="text" class="validate" [(ngModel)]="book.pages" name="book.pages">
+        </div>
+
+      </div>
+
+      <div class="col s6">
+        <label>Language</label>
+        <div class="input-field">
+          <i class="material-icons prefix">language</i>
+          <input id="language" type="text" class="validate" [(ngModel)]="book.language" name="book.language">
+        </div>
+
+        <label>Publisher</label>
+        <div class="input-field">
+          <i class="material-icons prefix">library_books</i>
+          <input id="publisher" type="text" class="validate" [(ngModel)]="book.publisher" name="book.publisher">
+        </div>
+
+        <label>Publication Date</label>
+        <div class="input-field">
+          <i class="material-icons prefix">date_range</i>
+          <input id="pubDate" type="text" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy'}]" [(ngModel)]="book.pubDate"
+            name="pubDate">
+        </div>
+
+        <label>Genre</label>
+        <select materialize="material_select" [materializeSelectOptions]="selectOptions" [(ngModel)]="book.genre" name="book.genre">
+            <option value="" disabled selected>Choose your option</option>
+            <option *ngFor="let genre of genres" [ngValue]="genre">{{genre.name}}</option>
+      </select>
+
+        <label>Price</label>
+        <label>Price</label>
+        <label></label>
+
+        <div class="input-field">
+          <i class="material-icons prefix">attach_money</i>
+          <input id="price" type="text" class="validate" [(ngModel)]="book.price" name="book.price">
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col s6 offset-s4">
+        <button (click)="saveEditBook(book)" class="btn-large waves-effect waves-light indigo" type="submit" name="action">Save
+              <i class="material-icons right">check</i>
+            </button>
+      </div>
+    </div>
+  </div>
+</div>

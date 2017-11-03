@@ -1,0 +1,12 @@
+.cont {
+    animation: showUp 0.4s cubic-bezier(0.18, 1.9, 1, 1) forwards;
+  }
+  
+  @keyframes showUp {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transoform: scale(1);
+    }
+  }

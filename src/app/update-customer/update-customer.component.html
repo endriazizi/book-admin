@@ -1,0 +1,97 @@
+<div class="wrapper animation">
+  <div class="row">
+
+    <div class="col s4">
+
+      <label>Name</label>
+      <div class="input-field">
+        <i class="material-icons prefix">account_box</i>
+        <input type="text" class="validate" [(ngModel)]="customer.name" name="customer.name">
+      </div>
+
+      <label>Last Name</label>
+      <div class="input-field">
+        <i class="material-icons prefix">person_outline</i>
+        <input type="text" class="validate" [(ngModel)]="customer.lastName" name="customer.lastName">
+      </div>
+
+      <label>Email</label>
+      <div class="input-field">
+        <i class="material-icons prefix">email</i>
+        <input type="text" class="validate" [(ngModel)]="customer.email" name="customer.email">
+      </div>
+
+      <label>Password</label>
+      <div class="input-field">
+        <i class="material-icons prefix">lock</i>
+        <input type="text" class="validate" [(ngModel)]="customer.password" name="customer.password">
+      </div>
+
+      <label>Confirm</label>
+      <div class="input-field">
+        <i class="material-icons prefix">lock</i>
+        <input type="text" class="validate" [(ngModel)]="customer.confirm" name="customer.confirm">
+      </div>
+    </div>
+
+    <div class="col s4">
+
+      <label>Country</label>
+      <div class="input-field">
+        <i class="material-icons prefix">language</i>
+        <input type="text" class="validate" [(ngModel)]="customer.country" name="customer.country">
+      </div>
+
+      <label>Street</label>
+      <div class="input-field">
+        <i class="material-icons prefix">location_on</i>
+        <input type="text" class="validate" [(ngModel)]="customer.street" name="customer.street">
+      </div>
+
+      <label>City</label>
+      <div class="input-field">
+        <i class="material-icons prefix">location_city</i>
+        <input type="text" class="validate" [(ngModel)]="customer.city" name="customer.city">
+      </div>
+
+      <label>State/County</label>
+      <div class="input-field">
+        <i class="material-icons prefix">location_city</i>
+        <input type="text" class="validate" [(ngModel)]="customer.state" name="customer.state">
+      </div>
+
+      <label>Zip</label>
+      <div class="input-field">
+        <i class="material-icons prefix">streetview</i>
+        <input type="text" class="validate" [(ngModel)]="customer.zip" name="customer.zip">
+      </div>
+    </div>
+
+    <div class="col s3">
+      <label>Phone</label>
+      <div class="input-field">
+        <i class="material-icons prefix">smartphone</i>
+        <input type="text" class="validate" [(ngModel)]="customer.phone" name="customer.phone">
+      </div>
+      <br>
+
+      <i class="material-icons prefix">accessibility</i> <label>Gender</label><br>
+      <form action="#">
+        <p>
+          <input class="with-gap" name="male" type="radio" id="male" [value]="male" (click)="getMale()" />
+          <label for="male">Male</label>
+
+          <input class="with-gap" name="male" type="radio" id="test3" [value]="female" (click)="getFemale()" />
+          <label for="test3">Female</label>
+        </p>
+      </form>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col s6 offset-s4">
+      <button (click)="saveUpdateCustomer(customer)" class="btn-large waves-effect waves-light indigo" type="submit" name="action">
+        Save<i class="material-icons right">check</i></button>
+    </div>
+  </div>
+</div>

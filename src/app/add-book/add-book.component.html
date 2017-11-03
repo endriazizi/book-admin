@@ -1,0 +1,83 @@
+<div class="wrapper animation">
+  <div class="container">
+    <div class="row">
+      <div class="col s5">
+        <div class="input-field">
+          <i class="material-icons prefix">book</i>
+          <input id="title" type="text" class="validate" [(ngModel)]="title" name="title">
+          <label for="title">Title</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">person_outline</i>
+          <input id="author" type="text" class="validate" [(ngModel)]="author" name="author">
+          <label for="author">Author</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">description</i>
+          <textarea id="description" class="materialize-textarea" [(ngModel)]="description" name="description"></textarea>
+          <label for="description">Description</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">dehaze</i>
+          <input id="pages" type="text" class="validate" [(ngModel)]="pages" name="pages">
+          <label for="pages">Pages</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">attach_money</i>
+          <input id="price" type="text" class="validate" [(ngModel)]="price" name="price">
+          <label for="price">Price $</label>
+        </div>
+      </div>
+
+      <div class="col s6">
+        <div class="input-field">
+          <i class="material-icons prefix">language</i>
+          <input id="language" type="text" class="validate" [(ngModel)]="language" name="language">
+          <label for="language">Language</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">library_books</i>
+          <input id="publisher" type="text" class="validate" [(ngModel)]="publisher" name="publisher">
+          <label for="publisher">Publisher</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">date_range</i>
+          <input id="pubDate" type="text" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy'}]" [(ngModel)]="pubDate"
+            name="pubDate">
+          <label for="pubDate">Publication Date</label>
+        </div>
+
+        <label class="card-title">Genre</label>
+        <select materialize="material_select" [materializeSelectOptions]="selectOptions" [(ngModel)]="genre" name="genre">
+              <option value="" disabled selected>Choose your option</option>
+              <option *ngFor="let genre of genres" [ngValue]="genre">{{genre.name}}</option>
+        </select>
+
+        <i class="material-icons prefix">collections</i>
+        <div class="file-field input-field">
+          <div class="btn indigo">
+            <span>File</span>
+            <input type="file" (change)="fileChange($event)" placeholder="Upload file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 offset-s4">
+        <button (click)="addBook(genre)" class="btn-large waves-effect waves-light indigo" type="submit" name="action">Add
+              <i class="material-icons right">check</i>
+            </button>
+      </div>
+    </div>
+  </div>
+  
+</div>

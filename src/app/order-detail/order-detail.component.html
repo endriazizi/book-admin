@@ -1,0 +1,43 @@
+<div class="wrapper animation">
+  <div class="container">
+    <div class="row">
+
+      <h2>#{{orderDetailed.orderCode}}</h2>
+      <p>Date: {{orderDetailed.date | date: 'medium'}}</p>
+      <h5>{{orderDetailed.customer.name}} {{orderDetailed.customer.lastName}}</h5>
+      <p><b>{{orderDetailed.customer.gender}}</b></p>
+      <h6>{{orderDetailed.customer.email}}, {{orderDetailed.customer.phone}}</h6>
+      <h6>{{orderDetailed.customer.country}}, {{orderDetailed.customer.state}}, {{orderDetailed.customer.city}}, {{orderDetailed.customer.zip}}</h6>
+
+      <h1>Total $ {{orderDetailed.total}}</h1>
+
+      <div class="col m4" *ngFor="let book of orderDetailed.books">
+        <div class="card small">
+          <div class="card-image">
+            <img src="http://localhost:3000/assets/uploads/{{book.image}}">
+          </div>
+          <div class="card-content">
+            <p>{{book.title}}</p>
+            <p><b>Author: </b> {{book.author}} </p>
+            <p><b>Pages: </b>{{book.pages}}</p>
+            <p><b>Genre: </b>{{book.genre.name}}</p>
+            <p>$ {{book.price}}</p>
+            <p><b>Quantity:</b> {{book.qt}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col 12">
+        <h2>Status</h2>
+        <p>Current status: <b>{{currentStatus}}</b></p>
+        <button class="btn-large grey">Ordered</button>
+        <button class="btn-large red" (click)="changeStatus2(orderDetailed)">Processing</button>
+        <button class="btn-large blue" (click)="changeStatus3(orderDetailed)">Production</button>
+        <button class="btn-large indigo" (click)="changeStatus4(orderDetailed)">Shipped</button>
+        <button class="btn-large green" (click)="changeStatus5(orderDetailed)">Delivered</button>
+      </div>
+    </div>
+  </div>
+</div>
